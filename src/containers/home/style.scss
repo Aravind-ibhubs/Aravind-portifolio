@@ -1,0 +1,64 @@
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+
+    &__text-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-weight: 600;
+            color: var(--yellow-theme-main-color);
+            position: relative;
+            margin: 0;
+            font-size: 8rem;
+            line-height: 10rem;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typingEffectAnimation 2.5s steps(30, end);
+        }
+        button {
+            background-color: transparent;
+            padding: 10px 65px;
+            border: 2px solid var(--yellow-theme-main-color);
+            color: var(--yellow-theme-main-color);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 20px;
+
+            &:hover {
+                background-color: var(--yellow-theme-main-color);
+                color: black;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .home__text-wrap h1{
+        font-size: 4rem;
+        line-height: 6rem;
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+    .home__text-wrap h1{
+        font-size: 6rem;
+        line-height: 8rem;
+    }   
+}
+
+@keyframes typingEffectAnimation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

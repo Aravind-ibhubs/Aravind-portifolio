@@ -1,0 +1,111 @@
+.contact {
+    &__content {
+        padding: 20px;
+
+        &__heading {
+            color: var(--yellow-theme-sub-text-color);
+            font-weight: 600;
+            font-size: 22px;
+            display: inline-block;
+            padding: 5px 10px;
+            position: relative;
+            line-height: 1em;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--yellow-theme-main-color);
+            margin-bottom: 30px;
+        }
+
+        &__heading::after, &__heading::before {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 5px;
+            background-color: var(--yellow-theme-main-color);
+            bottom: -1px;
+        }
+
+        &__heading::before {
+            left: 0;
+        }
+
+        &__heading::after {
+            right: 0;
+        }
+
+        &__forms {
+            margin-bottom: 30px;
+
+            &__inputs {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 40px;
+                margin-bottom: 30px;
+
+                div {
+                    position: relative;
+                    .name-input, .email-input, .desc-input {
+                        width: 100%;
+                        background: transparent;
+                        border: 2px solid var(--yellow-theme-main-color);
+                        padding: 16px 12px;
+                        transition: all 0.5s ease;
+                        position: relative;
+                        color: var(--yellow-theme-sub-text-color);
+                        top: 4px;
+                    }
+                    .name-label , .email-label ,.desc-label {
+                        font-weight: 700;
+                        color: var(--yellow-theme-main-color);
+                        top: 7px;
+                        left: 12px;
+                        position: absolute;
+                        transition: all 0.2s ease;
+                        font-size: 16px;
+                    }
+                    .name-input:focus , .email-input:focus ,.desc-input:focus {
+                        outline: none;
+                    }
+                    .name-input:focus + .name-label,
+                    .name-input:valid + .name-label,
+                    .email-input:focus + .email-label,
+                    .email-input:valid + .email-label,
+                    .desc-input:focus + .desc-label,
+                    .desc-input:valid + .desc-label {
+                        font-size: 18px;
+                        top: -20px;
+                        left: 0px;
+                    }
+                }
+            }
+            button {
+                padding: 10px 60px;
+                font-size: 2rem;
+                background: transparent;
+                border: 2px solid var(--yellow-theme-main-color);
+                cursor: pointer;
+                border-radius: 5px;
+                color: var(--yellow-theme-main-color);
+
+                &:hover {
+                    background-color: var(--yellow-theme-main-color);
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact__content__forms {
+        text-align: center;
+
+        &__inputs {
+            grid-template-columns: repeat(1,1fr);
+
+            div {
+                width: 80%;
+            }
+        }
+    }
+}
